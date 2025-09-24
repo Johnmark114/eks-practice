@@ -30,7 +30,7 @@ resource "aws_iam_user_login_profile" "dev" {
 }
 
 resource "aws_eks_access_policy_association" "dev-eks-access" {
-  cluster-name  = module.eks.cluster-name
+  cluster_name  = module.eks.cluster_name
   policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminViewPolicy"
   principal_arn = aws_iam_user.dev.arn
 

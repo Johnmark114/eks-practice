@@ -2,7 +2,7 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 21.0"
 
-  name               = var.cluster-name
+  name               = var.cluster_name
   kubernetes_version = "1.33"
 
   addons = {
@@ -52,8 +52,8 @@ module "eks" {
   }
 
   tags = {
-    "kubernetes.io/cluster/${var.cluster-name}" = "shared"
-    Name = var.cluster-name
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    Name = var.cluster_name
     Environment = "dev"
     Terraform   = "production"
   }
