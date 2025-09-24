@@ -76,7 +76,7 @@ module "eks" {
       principal_arn    = "arn:aws:iam::812835203419:user/innocent"
 
       policy_associations = {
-        InnocentPolicy = {
+          view = {
           policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminViewPolicy"
           access_scope = {
             type       = "cluster"
