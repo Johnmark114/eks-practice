@@ -1,25 +1,41 @@
-resource "aws_iam_role" "innocent_role" {
-  name = "innocent-role"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Principal = {
-          Service = "eks.amazonaws.com"
-        }
-        Action = "sts:AssumeRole"
-      }
-    ]
-  })
-
+resource "aws_iam_user" "dev" {
+  name = "innocent"
   tags = {
-    Environment = "dev"
-    Terraform   = "true"
+    tag-key = "tag-value"
   }
 }
-resource "aws_iam_role_policy_attachment" "innocent_eks_policy" {
-  role       = aws_iam_role.innocent_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+
+resource "aws_iam_access_key" "dev" {
+  user = aws_iam_user.dev.name
+}
+
+data "aws_iam_policy_document" "readonly" {
+  statement {
+    effect    = "Allow"
+    actions   = ["ec2:Describe*", "eks:list*","eks:Describe*"]
+    resources = ["*"]
+  }
+}
+
+resource "aws_iam_user_policy" "iam_policy" {
+  name   = "dev"
+  user   = aws_iam_user.dev.name
+  policy = data.aws_iam_policy_document.readonly.json
+}
+
+resource "aws_iam_user_login_profile" "dev" {
+  user    = aws_iam_user.dev.name
+ # pgp_key = "keybase:dev"
+
+}
+
+resource "aws_eks_access_policy_association" "dev-eks-access" {
+  cluster-name  = module.eks.cluster-name
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminViewPolicy"
+  principal_arn = aws_iam_user.dev.arn
+
+  access_scope {
+    type       = "namespace"
+    namespaces = ["default"]
+  }
 }
