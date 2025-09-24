@@ -8,6 +8,12 @@ resource "aws_iam_user" "dev" {
 resource "aws_iam_access_key" "dev" {
   user = aws_iam_user.dev.name
 }
+resource "aws_iam_policy" "eks_view_policy" {
+  name        = "EKSViewPolicy"
+  description = "Read-only access to view EKS cluster resources"
+  policy      = file("eks_view_policy.json") 
+}
+
 
 data "aws_iam_policy_document" "readonly" {
   statement {

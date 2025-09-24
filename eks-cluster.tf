@@ -77,7 +77,7 @@ module "eks" {
 
       policy_associations = {
           view = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminViewPolicy"
+          policy_arn = "arn:aws:iam::812835203419:policy/EKSViewPolicy"
           access_scope = {
             type       = "cluster"
           }
