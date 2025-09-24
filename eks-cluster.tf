@@ -71,15 +71,15 @@ module "eks" {
       }
     }
 
-    Innocent = {
-      kubernetes_group = []
-      principal_arn    = "arn:aws:iam::812835203419:user/innocent"
+     Innocent = {
+    kubernetes_group = []
+    principal_arn    = aws_iam_role.innocent_role.arn
 
-      policy_associations = {
-          view = {
-          policy_arn = "arn:aws:iam::812835203419:policy/EKSViewPolicy"
-          access_scope = {
-            type       = "cluster"
+    policy_associations = {
+      Innocent = {
+        policy_arn   = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+        access_scope = {
+          type       = "cluster"
           }
         }
       }
