@@ -1,5 +1,3 @@
-
-```markdown
 # InnovateMart EKS Deployment – Project Bedrock
 
 **Student:** Ogbuinya Johnmark Chisom  
@@ -134,4 +132,5 @@ innovatemart-eks/
 │   ├── accessentries.jpg
 │   └── iamuser.jpg
 └── README.md
+   
    
