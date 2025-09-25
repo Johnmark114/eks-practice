@@ -107,30 +107,4 @@ Automating deployments using GitHub Actions workflows.
 
 Enforcing principle of least privilege with IAM roles and users.
 
-innovatemart-eks/
-├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   └── terraform.tfvars
-├── k8s/
-│   ├── kubernetes.yaml
-├── .github/workflows/
-│   └── terraform.yml
-├── screenshots/
-│   ├── image1.png
-│   ├── terraform.tfvars.jpg
-│   ├── variables.jpg
-│   ├── ekscluster1.jpg
-│   ├── iamroles.jpg
-│   ├── iamroles2.jpg
-│   ├── loadbalancer.jpg
-│   ├── pipeline0.jpg
-│   ├── pipeline2.jpg
-│   ├── pipeline3.jpg
-│   ├── checkout.jpg
-│   ├── accessentries.jpg
-│   └── iamuser.jpg
-└── README.md
-   
    
