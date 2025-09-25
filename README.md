@@ -82,7 +82,7 @@ Verified node groups and access entries:
 
 ![Screenshot](screenshot/accessentries.jpg)
 ![Screenshot](screenshot/iamuser.jpg)
-![Screenshot](screenshott/checkout.jpg)
+![Screenshot](screenshot/checkout.jpg)
 
 
 
