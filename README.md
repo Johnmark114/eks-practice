@@ -45,7 +45,7 @@ The implementation covers:
   ```bash
   kubectl get svc
 Copied the URL and confirmed the UI was accessible.
-![Screenshot](screenshot/loadbalancer.jpg)
+![Screenshot](screenshot/loadbalaancer.jpg)
 
 
 ⚙️ Step 3: CI/CD Automation
