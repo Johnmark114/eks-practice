@@ -45,6 +45,7 @@ The implementation covers:
   ```bash
   kubectl get svc
 Copied the URL and confirmed the UI was accessible.
+**loadbalancer URL**: [ http://a41b61a00217d409ca8568bf5e329eac-159505440.us-east-1.elb.amazonaws.com]( http://a41b61a00217d409ca8568bf5e329eac-159505440.us-east-1.elb.amazonaws.com)
 ![Screenshot](screenshot/loadbalaancer.jpg)
 
 
